@@ -16,11 +16,11 @@
   <body>
   <header>
     <nav>
-      <a href=/>Pepinals<sup>{{ self.superscript() }}</sup></a>
-      <a href=https://docs.ordinals.com/>Handbook</a>
-      <a href=https://github.com/apezord/ord-dogecoin>Wallet</a>
-%% if self.config.index_sats {
-      <a href=/rare.txt>rare.txt</a>
+      <a href=/>Pepinals&nbsp;{{ self.superscript() }}</a>
+%% if self.config.chain != Chain::Testnet {
+      <a href=https://testnet.pepinals.com/>Testnet</a>
+%% } else {
+      <a href=https://pepinals.com/>Mainnet</a>
 %% }
       <form action=/search method=get>
         <input type=text autocapitalize=off autocomplete=off autocorrect=off name=query spellcheck=false>

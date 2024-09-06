@@ -71,9 +71,10 @@ where
 
   fn superscript(&self) -> String {
     if self.config.chain == Chain::Mainnet {
-      "alpha".into()
+      "Mainnet".into()
     } else {
-      self.config.chain.to_string()
+      "Testnet".into()
+      //self.config.chain.to_string()
     }
   }
 }

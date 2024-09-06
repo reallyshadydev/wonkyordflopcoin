@@ -15,7 +15,6 @@ services:
       - 80:80
     entrypoint: [
       "ord",
-      #"--testnet",
       "--chain=testnet",
       "--rpc-url=${RPC_URL}",
       "--data-dir=/root/.data",

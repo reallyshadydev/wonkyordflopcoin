@@ -176,7 +176,10 @@ a.mythic {
 }
 
 .thumbnails > a {
-  border-radius: 2%;
+  border-radius: 2px;
+  border-style: dashed;
+  border-color: #00000066;
+  padding: 1%;
   margin: 1%;
   overflow: hidden;
   width: 23%;
@@ -209,6 +212,11 @@ a.mythic {
 
 .inscription > *:nth-child(2) {
   flex: 0 75%;
+  border-radius: 2px;
+  border-style: dashed;
+  border-color: #00000066;
+  padding: 1%;
+  margin: 1%;
 }
 
 .inscription > a > iframe {

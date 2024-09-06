@@ -100,7 +100,7 @@ pub(crate) struct Index {
   unrecoverably_reorged: AtomicBool,
   rpc_url: String,
   nr_parallel_requests: usize,
-  chain: Chain,
+  pub chain: Chain,
 }
 
 #[derive(Debug, PartialEq)]

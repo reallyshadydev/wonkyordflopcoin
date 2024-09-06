@@ -9,8 +9,8 @@ pub enum ScriptKey {
 }
 
 impl ScriptKey {
-    pub fn from_address(address: Address) -> Self {
-        ScriptKey::Address(Address { payload: address.payload, network: Network::Bitcoin })
+    pub fn from_address(address: Address, network: Network) -> Self {
+        ScriptKey::Address(Address { payload: address.payload, network: network })
     }
     pub fn from_script(script: &Script, network: Network) -> Self {
         match Address::from_script(script, network) {

@@ -548,7 +548,7 @@ impl<'index> Updater<'_> {
         )?
         .index_block(
           BlockContext {
-            network: Network::Bitcoin,
+            network: index.chain.network(), 
             blockheight: self.height as u64,
             blocktime: block.header.time,
           },
@@ -574,7 +574,7 @@ impl<'index> Updater<'_> {
         &mut dune_to_dune_id,
         &mut statistic_to_count,
         block.header.time,
-        Dune::minimum_at_height(Chain::Mainnet, Height(self.height)),
+        Dune::minimum_at_height(index.chain, Height(self.height)),
       )?;
       for (i, (tx, txid)) in block.txdata.iter().enumerate() {
         dune_updater.index_dunes(i, tx, *txid)?;

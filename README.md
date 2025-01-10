@@ -42,11 +42,17 @@ mkdir -p /mnt/ord-node/indexer-data-main
 
 # replace YOUR_RPC_URL with the URL of your Dogecoin node like: http://foo:bar@127.0.0.1:22555
 
-// Start Indexing
-ord --rpc-url=YOUR_RPC_URL --data-dir=/mnt/ord-node/indexer-data-main --nr-parallel-requests=16 --first-inscription-height=4609723 --first-dune-height=5084000 --index-dunes --index-transactions --index-drc20 index
 
-// Start Indexing + Server
-ord --rpc-url=YOUR_RPC_URL --data-dir=/mnt/ord-node/indexer-data-main --nr-parallel-requests=16 --first-inscription-height=4609723 --first-dune-height=5084000 --index-dunes --index-transactions --index-drc20 server
+SERVER
+./target/release/ord \
+>     --first-inscription-height=0 \
+>     --rpc-url=http://1234:1234@127.0.0.1:32552 \
+>     --data-dir=/mnt/ord-node/indexer-data-new-v2 \
+>     --index-transactions \
+>     --index-drc20 \
+>     --nr-parallel-requests=16 \
+>     --index-dunes \
+>     server 
 ```
 `--index-transactions` will store transaction data, this is currently needed for `--index-drc20` and furthermore helps
 for a better performance for the API.

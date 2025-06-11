@@ -32,6 +32,7 @@ This project implements actual Flopcoin block rewards for blocks 0 through 144,9
    rpcport=32552
    allowip=127.0.0.1
    debug=1
+   txindex=1
    ```
 3. Fully sync your Flopcoin node before proceeding.
 
